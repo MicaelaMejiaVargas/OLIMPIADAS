@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 // Connectar a DB
-database = new Sequelize(
+const database = new Sequelize(
   'jjdeportes', 
   'root', 
   '', 
@@ -10,6 +10,7 @@ database = new Sequelize(
     dialect: 'mysql'
   }
 );
+
 (async () => {
     try {
       await database.authenticate();
@@ -17,5 +18,5 @@ database = new Sequelize(
     } catch (error) {
       console.error('No se puede conectar a la base de datos:', error);
     }
-  })();
+})();
 module.exports = database;
