@@ -1,6 +1,7 @@
 const { Sequelize } = require('sequelize');
-const sequelize = require('../config/db_sequelize');
-const Usuario = sequelize.define('usuario', {
+const db = require('../config/db_sequelize');
+
+const Usuario = db.define('usuario', {
     correo: {
         type: Sequelize.STRING,
         primaryKey: true

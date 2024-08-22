@@ -1,5 +1,5 @@
-// const promiseQuery = require('../config/db_sequelize');
-const usuario = require('../model/user_model')
+const usuario = require('../model/user_model');
+
 const showUsers=async (req,res)=>{
     try {
         const user = await usuario.findAll();
