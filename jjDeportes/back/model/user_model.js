@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 const sequelize = require('../config/db_sequelize');
-const Usuarios = sequelize.define('usuario', {
+const Usuario = sequelize.define('usuario', {
     correo: {
         type: Sequelize.STRING,
         primaryKey: true
@@ -8,14 +8,22 @@ const Usuarios = sequelize.define('usuario', {
     username:{
         type:Sequelize.STRING
     },
-    contraseña:{
+    passw:{
         type:Sequelize.STRING
     },
     accType:{
         type:Sequelize.BOOLEAN
     }
+},{
+    timestamps:false
 })
-Usuarios.sync();
-// Usuarios.sync({alter: true});
 
-module.exports = Usuarios;
+Usuario.sync({ force: false })
+  .then(() => {
+    console.log('Modelo de Persona sincronizado correctamente');
+  })
+  .catch(err => {
+    console.error('Error al sincronizar el Modelo de Persona:', err);
+  }
+);
+module.exports = Usuario;
