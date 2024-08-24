@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/estilos.css">
+
+    <title>Entrega esperada</title>
+</head>
+
+<body>
+    <header>
+        <img src="https://dummyimage.com/100x100/c5c6c7/fff" alt="">
+        <nav>
+            <ul class="menu">
+                <li class="itemMenu">item</li>
+                <li class="itemMenu">item</li>
+                <li class="d-inline-flex gap-1">
+                    <a data-bs-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1"><i class='bx bx-cart bx-lg'></i></a>
+               </li>
+            </ul>
+           
+        </nav>
+    </header>
+    <div class="row listaProducto">
+        <div class="col">
+          <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div id="carrito" class="card card-body text-center">
+                <p id = "textoInfo">Carrito vacio 😢</p>
+
+                <div class="noVisible">
+                    <button onclick="vaciarCarrito()" type="button" class="btn btn-danger">Vaciar Carrito</button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <main>
+        <section class="portada">
+            <h1>Mi web e-commerse</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero id asperiores, recusandae sed illum modi nisi necessitatibus unde quis excepturi accusamus</p>
+            
+        </section>
+        <section class="contenedorCards">
+            <div class="product" data-price="10">
+                <h3>Camiseta de argentina</h3>
+                <img src="./img/argentina.jpg" alt="plano">
+                <button onclick="cargarProducto(0)" class="btnComprar add-to-cart-btn">Agregar</button>
+            </div>
+            <div class="product" data-price="20">
+                <h3>Camiseta de portugal</h3>
+                <img src="./img/portugal.jpg" alt="plano">
+                <button onclick="cargarProducto(1)" class="btnComprar add-to-cart-btn">Agregar</button>
+            </div>
+            <div class="product" data-price="20">
+                <h3>Camiseta suplente de brasil</h3>
+                <img src="./img/brasil (1).webp" alt="plano">
+                <button onclick="cargarProducto(2)" class="btnComprar add-to-cart-btn">Agregar</button>
+            </div>
+            <div class="product" data-price="20">
+                <h3>Camiseta de inglaterra </h3>
+                <img src="./img/inglaterra.jpg" alt="plano">
+                <button onclick="cargarProducto(3)" class="btnComprar add-to-cart-btn">Agregar</button>
+            </div>
+        </section>
+        <section class="contenedorCarrito">
+            <div class="cart">
+                <h2>Carrito</h2>
+                <ul></ul>
+                <div>
+                    <button class="clear-cart-btn">Vaciar Carrito</button>
+                </div>
+            </div>
+        </section>
+        <div class="total">
+            <p>Total: <span class="total-price"> $0</span>Ars</p>
+        </div>
+    </main>
+    <footer>
+        <img src="https://dummyimage.com/100x100/c5c6c7/fff" alt="">
+        <div>
+            <a href=""><img src="https://dummyimage.com/50x50/c5c6c7/fff" alt=""></a>
+            <a href=""><img src="https://dummyimage.com/50x50/c5c6c7/fff" alt=""></a>
+            <a href=""><img src="https://dummyimage.com/50x50/c5c6c7/fff" alt=""></a>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
