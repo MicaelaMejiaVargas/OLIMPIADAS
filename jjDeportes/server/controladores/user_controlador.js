@@ -33,18 +33,24 @@ const updateUser = async (req, res) => {
       const {username, correo, passw, accType} = req.body;
   
       if (!username || username.length < 3 || username.length >50) { 
-        return res.status(401).json({error: "User inválido"})
+        return res.status(401).json({error: "Nombre de usuario inválido"})
       }
-      if (!correo || correo.length < 3) {
-        return res.status(401).json({error: "Nombre inválido"})
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!correo || !emailRegex.test(correo)) {
+        return res.status(401).json({error: "Correo electrónico inválido"});
       }
-      if (!apellido || apellido.length < 3) {
-        return res.status(401).json({error: "Apellido inválido"})
+
+      const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W_]).{8,}$/;
+      if (!passw || !passwordRegex.test(passw)) {
+        return res.status(401).json({error: "Contraseña inválida. Debe contener al menos una mayúscula, una minúscula, un número y un carácter especial."});
       }
-      if (isNaN(telefono)) {
-        return res.status(401).json({error: "Número de Telefono inválido"})
+
+      const validarTipoCuenta = [true,false];
+      if (!accType || !validarTipoCuenta.includes(accType)) {
+        return res.status(401).json({error: "Tipo de cuenta inválido"});
       }
-      
+
       const buscarUsuario = await usuario.findOne({ where: { correo: pasarCorreo } });
   
       if(!buscarUsuario){
