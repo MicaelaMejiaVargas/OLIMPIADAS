@@ -73,7 +73,7 @@ const updateUser = async (req, res) => {
 const deleteUser = async (req, res) => {
     try {
         const correo= req.params.correo
-        const buscarUser = await user.findOne({where: {correo}});
+        const buscarUser = await usuario.findOne({where: {correo}});
 
         if(!buscarUser){
         return res.status(404).json({ message: "User no encontrado."});
@@ -91,7 +91,7 @@ const deleteUser = async (req, res) => {
 const showOneUser = async (req, res) => {
     try {
       const { correo } = req.params
-      const user = await user.findByPk(correo)
+      const user = await usuario.findByPk(correo)
     
       return res.status(200).json(user) 
     } catch (error) {

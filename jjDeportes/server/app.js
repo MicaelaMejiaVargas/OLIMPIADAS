@@ -7,10 +7,13 @@ const cors = require('cors');
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-const usuario=require('./rutas/user');
-
+// Usuario
+const usuario=require('./rutas/user_routes');
 app.use('/user',usuario);
+
+// Productos
+const productos=require('./rutas/product_routes');
+app.use('/productos',productos);
 
 // Ruta INICIO
 app.get('/', (req, res) => {
