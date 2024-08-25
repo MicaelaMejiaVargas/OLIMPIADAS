@@ -11,9 +11,9 @@ const showProducts=async (req,res)=>{
 
 const createProduct=async(req,res)=>{
     try {
-        const {id_producto,precio,stock}=req.body;
+        const {id_producto,precio,stock,descripcion}=req.body;
         const nuevoProducto= await producto.create({ 
-            id_producto,precio,stock
+            id_producto,precio,stock,descripcion
         });
         nuevoProducto.save();
         return res.status(200).json({
@@ -30,7 +30,7 @@ const createProduct=async(req,res)=>{
 const updateProduct = async (req, res) => {
     try {
       const id = req.params.id;
-      const {id_producto,precio,stock} = req.body;
+      const {id_producto,precio,stock,descripcion} = req.body;
 
       const buscarProducto = await producto.findOne({ where: { id_producto: id } });
   
@@ -40,7 +40,7 @@ const updateProduct = async (req, res) => {
         });
       }
   
-      const actProducto = await buscarProducto.update({id_producto,precio,stock});
+      const actProducto = await buscarProducto.update({id_producto,precio,stock,descripcion});
       
       return res.status(200).json({
         message: "Usuario actualizado!",

@@ -15,6 +15,10 @@ app.use('/user',usuario);
 const productos=require('./rutas/product_routes');
 app.use('/productos',productos);
 
+// Pedidos
+const pedidos=require('./rutas/orders_routes');
+app.use('/pedidos',pedidos);
+
 // Ruta INICIO
 app.get('/', (req, res) => {
   res.send('Bienvenidos al inicio de la página');
