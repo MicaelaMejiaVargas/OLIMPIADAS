@@ -11,8 +11,6 @@ function cargarProducto(posicion){
         btnVaciar.style.display = "block";
     }
 
-
-    console.log(div)
     alert("Producto comprado!!")
     div.innerHTML = `
     <h4>${producto[posicion].nombre}</h4>
@@ -33,7 +31,7 @@ function vaciarCarrito() {
 
 let producto = [ //Estrutura Array
     { //Elemento 1 | posicion 0
-        nombre: "Camiseta de argentina",
+        nombre: "ZAPATILLA",
         precio: 13000,
         marca: "",
         talle: "M",
@@ -43,7 +41,7 @@ let producto = [ //Estrutura Array
         id: 1 //Dato clave 
     },
     { //Elemento 2 | posicion 1
-        nombre: "Camiseta de portugal",
+        nombre: "CAMPERA",
         precio: 12500,
         marca: "",
         talle: "S",
@@ -53,7 +51,7 @@ let producto = [ //Estrutura Array
         id: 2
     },
     { //Elemento 3 | posicion 2
-        nombre: "Camiseta suplente de brasil",
+        nombre: "RAQUETA",
         precio: 10500,
         marca: "",
         talle: "M",
@@ -62,8 +60,18 @@ let producto = [ //Estrutura Array
         descripcion: "...",
         id: 3
     },
-    { //Elemento 3 | posicion 2
-        nombre: "Camiseta de inglaterra",
+    { //Elemento 4 | posicion 3
+        nombre: "CUERDAS",
+        precio: 12000,
+        marca: "",
+        talle: "M",
+        color: "azul",
+        stock: 16,
+        descripcion: "...",
+        id: 4
+    },
+    { //Elemento 5 | posicion 4
+        nombre: "MEDIAS",
         precio: 12000,
         marca: "",
         talle: "M",

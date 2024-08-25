@@ -11,7 +11,7 @@
     <section class="navbar navbar-expand-lg bg-black">
         <div class="container-fluid">
             <div class="mx-auto p-0 m-0" style="align-content: center;">
-                <a href="#"><img src="../img/logo-jj-90.png" alt="logo-jjdeportes" style="margin-top: 10px;"></a>
+                <a href="../index.html"><img src="../img/logo-jj-90.png" alt="logo-jjdeportes" style="margin-top: 10px;"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button> 
@@ -31,11 +31,15 @@
     <div class="bloque-azul" style="height: 10px; background-color: blue;"></div>
       
     <section class="bg-secondary-subtle sec-carrito">
+        <br>
         <h4 class="mx-auto" style="width: fit-content; padding-top: 27px;">Carrito</h4>
 
-        <p id = "textoInfo" class="text-center">Carrito vacio 😢</p>
-        <div class="noVisible text-center">
-            <button onclick="vaciarCarrito()" type="button" class="btn btn-danger">Vaciar Carrito</button>
+        <div id="carrito" class="text-center">
+            <p id = "textoInfo">Carrito vacio 😢</p>
+
+            <div class="noVisible">
+                <button onclick="vaciarCarrito()" type="button" class="btn btn-danger">Vaciar Carrito</button>
+            </div>
         </div>
 
         <div class="total">
