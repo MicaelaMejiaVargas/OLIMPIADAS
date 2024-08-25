@@ -13,6 +13,10 @@ const Producto = db.define('producto', {
     stock:{
         type:Sequelize.INTEGER,
         allowNull: false
+    },
+    descripcion:{
+      type:Sequelize.STRING,
+      allowNull:false
     }
 },{
     timestamps:false
