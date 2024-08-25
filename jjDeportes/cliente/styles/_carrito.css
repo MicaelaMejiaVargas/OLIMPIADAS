@@ -1,0 +1,25 @@
+.listaProducto{
+    position: absolute;
+    right: 0px;
+    width: 350px;
+    z-index: 3;
+}
+
+.noVisible{
+    display: none;
+}
+
+.total {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(168, 168, 168);
+    color: white;
+    border: 2px solid black;
+    margin-bottom: 50px;
+}
+
+.sec-carrito{
+    padding-left: 100px;
+}
