@@ -9,14 +9,14 @@
 <body>
     <div class="card col-5 mx-auto shadow-lg py-5" style="margin-top: 100px;">
         <p class="mx-auto" style="width: fit-content;">REGISTRO</p>
-        <form action="#" class="row">
-            <input type="text" class="col-8 mx-auto" placeholder="nombre" required>
-            <input type="text" class="col-8 my-3 mx-auto" placeholder="correo" required>
-            <input type="text" class="col-8 mx-auto" placeholder="contraseña" required>
+        <form action="http://localhost:3000/user/" method="post" id="formulario" class="row">
+            <input type="text" class="col-8 mx-auto" name="username" placeholder="nombre" required>
+            <input type="text" class="col-8 my-3 mx-auto" name="correo" placeholder="correo" required>
+            <input type="text" class="col-8 mx-auto" name="passw" placeholder="contraseña" required>
             <div class="row mx-auto col-8 my-3">
-                <input type="radio" class="mx-auto" style="width: fit-content;" name="type" id="accountTypeOne" required>
+                <input type="radio" class="mx-auto" style="width: fit-content;" name="accType" id="accountTypeOne" required>
                 <label for="accountTypeOne" class="col-6 mx-auto">Usuario común</label>
-                <input type="radio" class="mx-auto" style="width: fit-content;" class="col-1 mx-auto" name="type" id="accountTypeTwo" required>
+                <input type="radio" class="mx-auto" style="width: fit-content;" class="col-1 mx-auto" name="accType" id="accountTypeTwo" required>
                 <label for="accountTypeTwo" class="col-4 mx-auto">Vendedor</label>
                 <!-- <input type="radio" class="col-2" name="accountType" required>Vendedor -->
             </div>
@@ -26,7 +26,7 @@
         </form>
         
     </div>
-    <script src="script.js"></script>
+    <script src="../scripts/script_registro.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
