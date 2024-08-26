@@ -18,12 +18,8 @@ document.getElementById("formulario").addEventListener("submit", async function(
     })
     .then(response => response.json())
     .then(data => {
-        console.log("Success:", data);
-        if (data.accType===true) {
-            window.location.href = "../pages/usuario_vista_productos.html";
-        } else { 
-            window.location.href = "../pages/vendedor_registro_productos.html";
-        }
+        alert("Usuario Creado!");
+        document.getElementById("formulario").reset();
     })
     .catch((error) => {
         console.error("Error:", error);
