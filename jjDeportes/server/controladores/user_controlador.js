@@ -29,7 +29,7 @@ const createUser=async(req,res)=>{
 
 const updateUser = async (req, res) => {
     try {
-      const pasarCorreo = req.params.correo;
+      const pasarUser = req.params.username;
       const {username, correo, passw, accType} = req.body;
   
       if (!username || username.length < 3 || username.length >50) { 
@@ -51,7 +51,7 @@ const updateUser = async (req, res) => {
         return res.status(401).json({error: "Tipo de cuenta inválido"});
       }
 
-      const buscarUsuario = await usuario.findOne({ where: { correo: pasarCorreo } });
+      const buscarUsuario = await usuario.findOne({ where: { username: pasarUser } });
   
       if(!buscarUsuario){
         return res.status(400).json({
@@ -72,8 +72,8 @@ const updateUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
     try {
-        const correo= req.params.correo
-        const buscarUser = await usuario.findOne({where: {correo}});
+        const username= req.params.username
+        const buscarUser = await usuario.findOne({where: {username}});
 
         if(!buscarUser){
         return res.status(404).json({ message: "User no encontrado."});
@@ -90,8 +90,8 @@ const deleteUser = async (req, res) => {
 }
 const showOneUser = async (req, res) => {
     try {
-      const { correo } = req.params
-      const user = await usuario.findByPk(correo)
+      const { username } = req.params
+      const user = await usuario.findByPk(username)
     
       return res.status(200).json(user) 
     } catch (error) {

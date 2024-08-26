@@ -17,7 +17,7 @@ const createProduct=async(req,res)=>{
         });
         nuevoProducto.save();
         return res.status(200).json({
-            message: "usuario creado!",
+            message: "producto creado!",
             data: nuevoProducto
         })
         
@@ -43,7 +43,7 @@ const updateProduct = async (req, res) => {
       const actProducto = await buscarProducto.update({id_producto,precio,stock,descripcion});
       
       return res.status(200).json({
-        message: "Usuario actualizado!",
+        message: "Producto actualizado!",
         data: actProducto
       })
     } catch (error) {

@@ -12,7 +12,7 @@ const Pedido = db.define('pedido', {
         type:Sequelize.STRING,
         allowNull: false,
         references: 'usuarios',
-        referencesKey: 'correo'
+        referencesKey: 'username'
     },
     nombre_producto:{
         type:Sequelize.STRING,

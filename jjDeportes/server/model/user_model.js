@@ -4,6 +4,7 @@ const db = require('../config/db_sequelize');
 const Usuario = db.define('usuario', {
     username:{
         type:Sequelize.STRING,
+        primaryKey: true,
         allowNull: false,
         validate: {
           len: {
@@ -15,13 +16,16 @@ const Usuario = db.define('usuario', {
     },
     correo: {
       type: Sequelize.STRING,
-      primaryKey: true,
       allowNull: false,
+      unique: true,
       validate: {
         isEmail:{
           msg: "Formato de email inválido."
         },
-        notEmpty: true
+        notEmpty: true,
+        unique: {
+          msg: "Este correo ya tiene una cuenta"
+        }
       }
     },
     passw:{
