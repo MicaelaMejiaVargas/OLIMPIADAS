@@ -11,14 +11,18 @@ const Pedido = db.define('pedido', {
     nombre:{
         type:Sequelize.STRING,
         allowNull: false,
-        references: 'usuarios',
-        referencesKey: 'username'
+        references: {
+          model: "usuarios",
+          key: 'username'
+        }
     },
     nombre_producto:{
         type:Sequelize.STRING,
         allowNull: false,
-        references: 'productos',
-        referencesKey: 'descripcion'
+        references: {
+          model: "productos",
+          key: 'descripcion'
+        }
     }
 },{
     timestamps:false

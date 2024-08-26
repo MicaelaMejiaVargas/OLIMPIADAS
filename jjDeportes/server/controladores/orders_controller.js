@@ -1,4 +1,5 @@
-const pedido = require('../model/orders_model.js');
+// const pedido = require('../model/orders_model.js');
+const pedido = require("../model/modelos");
 
 const showOrders=async (req,res)=>{
     try {
