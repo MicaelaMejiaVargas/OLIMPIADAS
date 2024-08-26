@@ -1,5 +1,5 @@
-// const usuario = require('../model/user_model');
-const usuario = require("../model/modelos")
+const usuario = require('../model/user_model');
+// const usuario = require("../model/modelos")
 
 const showUsers=async (req,res)=>{
     try {
@@ -12,26 +12,33 @@ const showUsers=async (req,res)=>{
 
 const createUser=async(req,res)=>{
     try {
-        const {username,correo,passw,accType}=req.body;
+        let {username,correo,passw,accType}=req.body;
+
+        accType = accType === 'true';
+
         const nuevoUsuario= await usuario.create({ 
             username,correo,passw,accType
         });
         nuevoUsuario.save();
         return res.status(200).json({
             message: "usuario creado!",
-            data: nuevoUsuario
+            data: nuevoUsuario,
+            accType: nuevoUsuario.accType
         })
         
     } catch (error) {
-        return res.json({err: error})
+        // return res.json({err: error})
+        console.log(error);
         // return res.status(500).json({error: "Internal Server Error"})
     }
 }
 
 const updateUser = async (req, res) => {
     try {
-      const pasarUser = req.params.username;
-      const {username, correo, passw, accType} = req.body;
+      let pasarUser = req.params.username;
+      let {username, correo, passw, accType} = req.body;
+
+      accType = accType === 'true';
   
       if (!username || username.length < 3 || username.length >50) { 
         return res.status(401).json({error: "Nombre de usuario inválido"})
@@ -64,7 +71,8 @@ const updateUser = async (req, res) => {
       
       return res.status(200).json({
         message: "Usuario actualizado!",
-        data: actUser
+        data: actUser,
+        accType: actUser.accType
       })
     } catch (error) {
       return res.status(500).json({error: "Internal Server Error"})

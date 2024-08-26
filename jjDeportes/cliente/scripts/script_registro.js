@@ -1,16 +1,28 @@
-document.getElementById("formulario").addEventListener("submit", function(event){
+document.getElementById("formulario").addEventListener("submit", function(event) {
     event.preventDefault();
-
-    const formData = new FormData(this);
+    
+    const formData = {
+        username: document.querySelector('input[name="username"]').value,
+        correo: document.querySelector('input[name="correo"]').value,
+        passw: document.querySelector('input[name="passw"]').value,
+        accType: document.querySelector('input[name="accType"]:checked').value,
+    };
 
     fetch("http://localhost:3000/user/", {
         method: "POST",
-        body: formData,
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
     })
     .then(response => response.json())
     .then(data => {
         console.log("Success:", data);
-        alert("Usuario Creado con Éxito!")
+        if (data.accType) {  // Si es true, es Vendedor
+            window.location.href = "/vendedor_registro_productos.html";
+        } else {  // Si es false, es Usuario Común
+            window.location.href = "/usuario_vista_productos.html";
+        }
     })
     .catch((error) => {
         console.error("Error:", error);

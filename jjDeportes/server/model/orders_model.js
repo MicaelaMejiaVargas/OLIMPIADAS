@@ -28,12 +28,12 @@ const Pedido = db.define('pedido', {
     timestamps:false
 })
 
-Pedido.sync({ force: false })
-  .then(() => {
-    console.log('Modelo de Pedidos sincronizado correctamente');
-  })
-  .catch(err => {
-    console.error('Error al sincronizar el Modelo de Pedidos:', err);
-  }
-);
+// Pedido.sync({ force: false })
+//   .then(() => {
+//     console.log('Modelo de Pedidos sincronizado correctamente');
+//   })
+//   .catch(err => {
+//     console.error('Error al sincronizar el Modelo de Pedidos:', err);
+//   }
+// );
 module.exports = Pedido;

@@ -4,7 +4,7 @@ const Producto = db.define('producto', {
     id_producto:{
         type:Sequelize.INTEGER,
         allowNull: false,
-        primaryKey: true
+        // primaryKey: true
     },
     precio:{
         type:Sequelize.FLOAT,
@@ -16,18 +16,19 @@ const Producto = db.define('producto', {
     },
     descripcion:{
       type:Sequelize.STRING,
-      allowNull:false
+      allowNull:false,
+      primaryKey: true
     }
 },{
     timestamps:false
 })
 
-Producto.sync({ force: false })
-  .then(() => {
-    console.log('Modelo de Producto sincronizado correctamente');
-  })
-  .catch(err => {
-    console.error('Error al sincronizar el Modelo de Producto:', err);
-  }
-);
+// Producto.sync({ force: false })
+//   .then(() => {
+//     console.log('Modelo de Producto sincronizado correctamente');
+//   })
+//   .catch(err => {
+//     console.error('Error al sincronizar el Modelo de Producto:', err);
+//   }
+// );
 module.exports = Producto;

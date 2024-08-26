@@ -17,15 +17,14 @@ const Usuario = db.define('usuario', {
     correo: {
       type: Sequelize.STRING,
       allowNull: false,
-      unique: true,
       validate: {
         isEmail:{
           msg: "Formato de email inválido."
         },
         notEmpty: true,
-        unique: {
-          msg: "Este correo ya tiene una cuenta"
-        }
+        // unique: {
+        //   msg: "Este correo ya tiene una cuenta"
+        // }
       }
     },
     passw:{
@@ -57,12 +56,12 @@ const Usuario = db.define('usuario', {
     timestamps:false
 })
 
-Usuario.sync({ force: false })
-  .then(() => {
-    console.log('Modelo de Persona sincronizado correctamente');
-  })
-  .catch(err => {
-    console.error('Error al sincronizar el Modelo de Persona:', err);
-  }
-);
+// Usuario.sync({ force: false })
+//   .then(() => {
+//     console.log('Modelo de Persona sincronizado correctamente');
+//   })
+//   .catch(err => {
+//     console.error('Error al sincronizar el Modelo de Persona:', err);
+//   }
+// );
 module.exports = Usuario;
