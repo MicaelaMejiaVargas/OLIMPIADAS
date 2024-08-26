@@ -47,8 +47,8 @@ const pedidos=require('./rutas/orders_routes');
 app.use('/pedidos',pedidos);
 
 // PERMISOS
-app.get('/registro-productos', esVendedor, (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'vendedor_registro_productos.html'));
+app.get('/registro', esVendedor, (req, res) => {
+  res.sendFile(path.join(__dirname, './cliente/pages/', 'vendedor_registro_productos.html'));
 });
 
 app.get('/vista-productos', esUsuarioComun, (req, res) => {

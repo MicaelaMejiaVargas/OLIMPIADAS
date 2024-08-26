@@ -19,10 +19,10 @@ document.getElementById("formulario").addEventListener("submit", async function(
     .then(response => response.json())
     .then(data => {
         console.log("Success:", data);
-        if (data.accType) {  // Si es true, es Vendedor
-            window.location.href = "/vendedor_registro_productos.html";
-        } else {  // Si es false, es Usuario Común
-            window.location.href = "/usuario_vista_productos.html";
+        if (data.accType) {
+            window.location.href = "../pages/vendedor_registro_productos.html";
+        } else { 
+            window.location.href = "../pages/usuario_vista_productos.html";
         }
     })
     .catch((error) => {
