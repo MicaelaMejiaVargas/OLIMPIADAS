@@ -14,25 +14,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //middleware para verificacion de usuarios
-const esVendedor = (req, res, next) => {
-  const { accType } = req.user; // Suponiendo que accType esté en el objeto usuario en req
+// const esVendedor = (req, res, next) => {
+//   const { accType } = req.user; // Suponiendo que accType esté en el objeto usuario en req
 
-  if (accType === true) { // true significa que es un Vendedor
-      next(); // Si es un vendedor, continúa a la siguiente función
-  } else {
-      return res.status(403).json({ message: "Acceso denegado: solo los Vendedores pueden acceder a esta página." });
-  }
-};
+//   if (accType === true) { // true significa que es un Vendedor
+//       next(); // Si es un vendedor, continúa a la siguiente función
+//   } else {
+//       return res.status(403).json({ message: "Acceso denegado: solo los Vendedores pueden acceder a esta página." });
+//   }
+// };
 
-const esUsuarioComun = (req, res, next) => {
-  const { accType } = req.user;
+// const esUsuarioComun = (req, res, next) => {
+//   const { accType } = req.user;
 
-  if (accType === false) { // false significa que es un Usuario Común
-      next(); // Si es un usuario común, continúa a la siguiente función
-  } else {
-      return res.status(403).json({ message: "Acceso denegado: solo los Usuarios Comunes pueden acceder a esta página." });
-  }
-};
+//   if (accType === false) { // false significa que es un Usuario Común
+//       next(); // Si es un usuario común, continúa a la siguiente función
+//   } else {
+//       return res.status(403).json({ message: "Acceso denegado: solo los Usuarios Comunes pueden acceder a esta página." });
+//   }
+// };
 
 // Usuario
 const usuario=require('./rutas/user_routes');
@@ -47,13 +47,13 @@ const pedidos=require('./rutas/orders_routes');
 app.use('/pedidos',pedidos);
 
 // PERMISOS
-app.get('/registro', esVendedor, (req, res) => {
-  res.sendFile(path.join(__dirname, './cliente/pages/', 'vendedor_registro_productos.html'));
-});
+// app.get('/registro', esVendedor, (req, res) => {
+//   res.sendFile(path.join(__dirname, './cliente/pages/', 'vendedor_registro_productos.html'));
+// });
 
-app.get('/vista-productos', esUsuarioComun, (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'usuario_vista_productos.html'));
-});
+// app.get('/vista-productos', esUsuarioComun, (req, res) => {
+//   res.sendFile(path.join(__dirname, 'views', 'usuario_vista_productos.html'));
+// });
 
 
 // Ruta INICIO
