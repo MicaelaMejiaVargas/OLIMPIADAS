@@ -1,5 +1,7 @@
-function cargarProducto(posicion){
+let preciototal=0;
 
+function cargarProducto(posicion){
+    const parrafoTotal=document.querySelector(".total-price");
     const carrito = document.querySelector("#prod_select");
     const div = document.createElement("div");
 
@@ -12,7 +14,10 @@ function cargarProducto(posicion){
     <h5>${producto[posicion].nombre} $${producto[posicion].precio}</h5>
     `
     carrito.append(div);
-
+    preciototal+=producto[posicion].precio;
+    parrafoTotal.innerHTML=`
+    <p id="parrafoTotal">Total: <span class="total-price"> $${preciototal}</span>Ars</p>
+    `;
     if(textoInfo != null){
         textoInfo.remove();
         // total.remove();
