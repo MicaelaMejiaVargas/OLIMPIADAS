@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <section class="navbar navbar-expand-lg bg-black">
+        <div class="container-fluid">
+            <div class="mx-auto p-0 m-0" style="align-content: center;">
+                <a href="#"><img src="../img/logo-jj-90.png" alt="logo-jjdeportes" style="margin-top: 10px;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button> 
+            </div>
+        </div>
+    </section>
+    <div class="d-flex justify-content-evenly bg-black ">
+      <p><a href="">NUEVOS</a></p>
+      <p><a href="">CALZADO</a></p>
+      <p><a href="">INDUMENTARIA</a></p>
+      <p><a href="">ACCESORIOS</a></p>
+      <p><a href="">OFERTAS</a></p>
+      <p><a href="#marcas">MARCAS</a></p>
+      <p><a href="./pages/login.html"><img src="../img/user-circle-solid-24.png" alt="user_name"> Mi cuenta</a></p> 
+      <a data-bs-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1"><img src="../img/cart-alt-solid-24.png" alt="carrito"></a>
+    </div>
+    <div class="row listaProducto">
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+          <div id="carrito" class="card card-body text-center">
+            <div id="prod_select"></div>
+            <p id = "textoInfo">Carrito vacio 😢</p>
+            <div class="total">
+              <p id="parrafoTotal">Total: <span class="total-price"> $0Ars</span></p>
+            </div>
+            <div class="noVisible">
+                <button onclick="vaciarCarrito()" type="button" class="btn btn-danger">Vaciar Carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bloque-azul" style="height: 10px; background-color: blue;"></div>
+    <section class="bg-secondary-subtle">
+        <h4 class="mx-auto" style="width: fit-content; padding-top: 27px;">Lo más vendido</h4> <br>
+        <div class="mx-auto">
+          <div class="col-12 justify-content-evenly mx-auto d-flex">
+            <div class="card col-2">
+              <p class="m-auto py-2">Zapatillas fila</p>
+              <button onclick="cargarProducto(0)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+            <div class="card col-2">
+              <p class="m-auto py-2">Campera brand team</p>
+              <button onclick="cargarProducto(1)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+            <div class="card col-2">
+              <p class="m-auto py-2">Raqueta tenis energy xl</p>
+              <button onclick="cargarProducto(2)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+          </div>
+          <div class="col-12 justify-content-evenly mx-auto d-flex py-4">
+            <div class="card col-2">
+              <p class="mx-auto py-2">Pelotas de tenis</p>
+              <button onclick="cargarProducto(3)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+            <div class="card col-2">
+              <p class="m-auto py-2">Medias boca juniors</p>
+              <button onclick="cargarProducto(4)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+            <div class="card col-2">
+              <p class="m-auto py-2">Pelota futbol</p>
+              <button onclick="cargarProducto(5)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+          </div>
+          <div class="col-12 justify-content-evenly mx-auto d-flex py-4">
+            <div class="card col-2">
+              <p class="mx-auto py-2">Paleta nimatsu</p>
+              <button onclick="cargarProducto(3)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+            <div class="card col-2">
+              <p class="m-auto py-2">Red ping pong 5x56</p>
+              <button onclick="cargarProducto(4)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+            <div class="card col-2">
+              <p class="m-auto py-2">Camiseta Boca Juniors</p>
+              <button onclick="cargarProducto(5)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+          </div>
+          <div class="col-12 justify-content-evenly mx-auto d-flex py-4">
+            <div class="card col-2">
+              <p class="mx-auto py-2">Botines Predator</p>
+              <button onclick="cargarProducto(3)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+            <div class="card col-2">
+              <p class="m-auto py-2">Protector bucal unisex</p>
+              <button onclick="cargarProducto(4)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+            <div class="card col-2">
+              <p class="m-auto py-2">Canilleras shinguard g600</p>
+              <button onclick="cargarProducto(5)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+          </div>
+          <div class="col-12 justify-content-evenly mx-auto d-flex py-4">
+            <div class="card col-2">
+              <p class="mx-auto py-2">Pelota de basquet classic</p>
+              <button onclick="cargarProducto(3)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+            <div class="card col-2">
+              <p class="m-auto py-2">Pelota de basquet royal 3</p>
+              <button onclick="cargarProducto(4)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+            <div class="card col-2">
+              <p class="m-auto py-2">Pelota voley classic</p>
+              <button onclick="cargarProducto(5)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+          </div>
+          <div class="col-12 justify-content-evenly mx-auto d-flex py-4">
+            <div class="card col-2">
+              <p class="mx-auto py-2">Pelota voley wilson</p>
+              <button onclick="cargarProducto(3)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+            <div class="card col-2">
+              <p class="m-auto py-2">Medias river plte</p>
+              <button onclick="cargarProducto(4)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+            <div class="card col-2">
+              <p class="m-auto py-2">Camiseta independiente</p>
+              <button onclick="cargarProducto(5)" type="button" class="btn btn-dark col-10 mx-auto my-2">Agregar al carrito</button>
+            </div>
+          </div>
+        
+        </div>
+        <button class="btn btn-dark col-3 mx-auto my-3 justify-content-center" style="display: flex;"> <b> Más Productos </b> </button>
+        <br>
+    </section>
+    <footer>
+        <section id="texto-footer">
+          <div>
+            <p><b> SEGUINOS EN </b></p>
+            <img src="../img/facebook-circle-logo-24.png" alt="">
+            <img src="../img/instagram-alt-logo-24.png" alt="">
+          </div>
+          <div class="hor-aten">
+            <p><b> HORARIO DE ATENCIÓN </b></p>
+            <p class="m-0">Lunes a Viernes de 8 a 22 hs.</p>
+            <p>Sábado y Domingo de 10 a 19 hs.</p>
+          </div>
+          <div>
+            <p><b> CONTACTO </b></p>
+            <p class="m-0">holaJJdeportes@gmail.com.ar</p>
+            <p>Whatsapp: 11 3152-0336</p>
+          </div>
+        </section>
+        <hr style="color: white;">
+        <div id="der-autor">
+          <p>Copyrigth @ 2024 | Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
