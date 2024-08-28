@@ -27,6 +27,7 @@ function cargarProducto(posicion){
 }
 
 function vaciarCarrito() {
+    preciototal=0;
     const carrito = document.getElementById("carrito");
     carrito.innerHTML = `
         <div id="prod_select"></div>
